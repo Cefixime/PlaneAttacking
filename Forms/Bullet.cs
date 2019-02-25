@@ -25,7 +25,7 @@ namespace Plane
         }
         public override void Draw(Graphics g)
         {
-            g.DrawImage(imgBullet, this.x, this.y);
+            g.DrawImage(imgBullet, this.x, this.y, this.Width / 2, this.Height / 2);
             this.Move();
         }
         public override void Move()
@@ -48,7 +48,7 @@ namespace Plane
     }
     class HeroBullet : Bullet
     {
-        private static Image imgHero = Resources.bullet11;
+        private static Image imgHero = Resources.bullet1;
         public HeroBullet(PlaneFather pf, int speed, int power)
             : base(pf, imgHero, speed, power)
         {
