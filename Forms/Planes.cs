@@ -40,4 +40,99 @@ namespace Plane
             SingleObject.GetSingle().AddGameObeject(new HeroBullet(this, 10, 1));
         }
     }
+    class PlaneEnemy : PlaneFather
+    {
+        private static Image img1 = Resources.enemy0;
+        private static Image img2 = Resources.enemy1;
+        private static Image img3 = Resources.enemy2;
+        public PlaneEnemy(int x, int y, int type)
+            : base(x, y, GetImage(type), GetLife(type), GetSpeed(type), Direction.down)
+        { }
+        public int EnemyType
+        {
+            get;
+            set;
+        }
+        public static Image GetImage(int type)
+        {
+            switch(type)
+            {
+                case 0:
+                    return img1;
+                case 1:
+                    return img2;
+                case 2:
+                    return img3;
+            }
+            return null;
+        }
+        public static int GetLife(int type)
+        {
+            switch(type)
+            {
+                case 0:
+                    return 1;
+                case 1:
+                    return 2;
+                case 2:
+                    return 3;
+            }
+            return 0;
+        }
+        public static int GetSpeed(int type)
+        {
+            switch(type)
+            {
+                case 0:
+                    return 5;
+                case 1:
+                    return 6;
+                case 2:
+                    return 7;
+            }
+            return 0;
+        }
+        public override void Draw(Graphics g)
+        {
+            switch(this.EnemyType)
+            {
+                case 0:
+                    g.DrawImage(img1, this.x, this.y);
+                    break;
+                case 1:
+                    g.DrawImage(img2, this.x, this.y);
+                    break;
+                case 2:
+                    g.DrawImage(img3, this.x, this.y);
+                    break;
+            }
+            this.Move();
+        }
+        public override void Move()
+        {
+            switch (this.Dir)
+            {
+                case Direction.up:
+                    this.y -= this.Speed;
+                    break;
+                case Direction.down:
+                    this.y += this.Speed;
+                    break;
+                case Direction.left:
+                    this.x -= this.Speed;
+                    break;
+                case Direction.right:
+                    this.x += this.Speed;
+                    break;
+            }
+            if (this.x <= 0)
+                this.x = 0;
+            if (this.x > 400)
+                this.x = 400;
+            if (this.y <= 0)
+                this.y = 0;
+            if (this.y >= 780)
+                this.y = 1400;
+        }
+    }
 }

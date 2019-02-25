@@ -27,6 +27,7 @@ namespace Plane
             set;
         }
         List<HeroBullet> heroBullets = new List<HeroBullet>();
+        List<PlaneEnemy> planeEnemies = new List<PlaneEnemy>();
         public void AddGameObeject(PlaneObject go)
         {
             if (go is BackGround)
@@ -35,6 +36,8 @@ namespace Plane
                 this.PH = go as PlaneHero;
             else if (go is HeroBullet)
                 heroBullets.Add(go as HeroBullet);
+            else if (go is PlaneEnemy)
+                planeEnemies.Add(go as PlaneEnemy);
         }
         public void Draw(Graphics g)
         {
@@ -42,6 +45,8 @@ namespace Plane
             this.PH.Draw(g);
             for (int i = 0; i < heroBullets.Count; i++)
                 heroBullets[i].Draw(g);
+            for (int i = 0; i < planeEnemies.Count; i++)
+                planeEnemies[i].Draw(g);
         }
     }
 }

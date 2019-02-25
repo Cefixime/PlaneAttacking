@@ -13,6 +13,7 @@ namespace Forms
 {
     public partial class Form1 : Form
     {
+        static Random r = new Random();
         public Form1()
         {
             InitializeComponent();
@@ -22,6 +23,10 @@ namespace Forms
         {
             SingleObject.GetSingle().AddGameObeject(new BackGround(0, -850, 5));
             SingleObject.GetSingle().AddGameObeject(new PlaneHero(100, 100, 5, 3, Direction.up));
+            for(int i = 0; i < 4; i++)
+            {
+                SingleObject.GetSingle().AddGameObeject(new PlaneEnemy(r.Next(0, this.Width), -400, r.Next(0, 100) % 3));
+            }
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
