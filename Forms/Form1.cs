@@ -38,5 +38,15 @@ namespace Forms
         {
             this.Invalidate();
         }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            SingleObject.GetSingle().PH.MouseMove(e);
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            SingleObject.GetSingle().PH.Fire();
+        }
     }
 }

@@ -8,3 +8,13 @@ C:\Users\skideu\source\repos\PlaneAttacking\Forms\obj\Debug\Forms.csproj.Generat
 C:\Users\skideu\source\repos\PlaneAttacking\Forms\obj\Debug\Forms.csproj.CoreCompileInputs.cache
 C:\Users\skideu\source\repos\PlaneAttacking\Forms\obj\Debug\Forms.exe
 C:\Users\skideu\source\repos\PlaneAttacking\Forms\obj\Debug\Forms.pdb
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\bin\Debug\Forms.exe.config
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\bin\Debug\Forms.exe
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\bin\Debug\Forms.pdb
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\obj\Debug\Forms.csprojAssemblyReference.cache
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\obj\Debug\Forms.Form1.resources
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\obj\Debug\Forms.Properties.Resources.resources
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\obj\Debug\Forms.csproj.GenerateResource.cache
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\obj\Debug\Forms.csproj.CoreCompileInputs.cache
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\obj\Debug\Forms.exe
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\obj\Debug\Forms.pdb

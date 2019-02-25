@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using Forms.Properties;
+using System.Windows.Forms;
 
 namespace Plane
 {
@@ -27,7 +28,16 @@ namespace Plane
         }
         public override void Draw(Graphics g)
         {
-            g.DrawImage(imgPlane, this.x, this.y);
+            g.DrawImage(imgPlane, this.x, this.y, this.Width / 2, this.Height / 2);
+        }
+        public void MouseMove(MouseEventArgs e)
+        {
+            this.x = e.X;
+            this.y = e.Y;
+        }
+        public void Fire()
+        {
+            SingleObject.GetSingle().AddGameObeject(new HeroBullet(this, 10, 1));
         }
     }
 }
