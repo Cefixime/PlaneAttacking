@@ -1,0 +1,10 @@
+C:\Users\skideu\source\repos\PlaneAttacking\Forms\bin\Debug\Forms.exe.config
+C:\Users\skideu\source\repos\PlaneAttacking\Forms\bin\Debug\Forms.exe
+C:\Users\skideu\source\repos\PlaneAttacking\Forms\bin\Debug\Forms.pdb
+C:\Users\skideu\source\repos\PlaneAttacking\Forms\obj\Debug\Forms.csprojAssemblyReference.cache
+C:\Users\skideu\source\repos\PlaneAttacking\Forms\obj\Debug\Forms.Form1.resources
+C:\Users\skideu\source\repos\PlaneAttacking\Forms\obj\Debug\Forms.Properties.Resources.resources
+C:\Users\skideu\source\repos\PlaneAttacking\Forms\obj\Debug\Forms.csproj.GenerateResource.cache
+C:\Users\skideu\source\repos\PlaneAttacking\Forms\obj\Debug\Forms.csproj.CoreCompileInputs.cache
+C:\Users\skideu\source\repos\PlaneAttacking\Forms\obj\Debug\Forms.exe
+C:\Users\skideu\source\repos\PlaneAttacking\Forms\obj\Debug\Forms.pdb
