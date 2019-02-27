@@ -9,6 +9,8 @@ namespace Plane
 {
     class SingleObject
     {
+        private SingleObject()
+        { }
         private static SingleObject _single = null;
         public static SingleObject GetSingle()
         {

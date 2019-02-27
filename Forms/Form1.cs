@@ -25,7 +25,7 @@ namespace Forms
             SingleObject.GetSingle().AddGameObeject(new PlaneHero(100, 100, 5, 3, Direction.up));
             for(int i = 0; i < 4; i++)
             {
-                SingleObject.GetSingle().AddGameObeject(new PlaneEnemy(r.Next(0, this.Width), -400, r.Next(0, 100) % 3));
+                SingleObject.GetSingle().AddGameObeject(new PlaneEnemy(r.Next(0, this.Width), -400, r.Next(0, 3)));
             }
         }
 

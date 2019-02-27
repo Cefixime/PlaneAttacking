@@ -46,8 +46,10 @@ namespace Plane
         private static Image img2 = Resources.enemy1;
         private static Image img3 = Resources.enemy2;
         public PlaneEnemy(int x, int y, int type)
-            : base(x, y, GetImage(type), GetLife(type), GetSpeed(type), Direction.down)
-        { }
+            : base(x, y, GetImage(type), GetSpeed(type), GetLife(type), Direction.down)
+        {
+            this.EnemyType = type;
+        }
         public int EnemyType
         {
             get;
@@ -94,7 +96,7 @@ namespace Plane
         }
         public override void Draw(Graphics g)
         {
-            switch(this.EnemyType)
+            switch(this. EnemyType)
             {
                 case 0:
                     g.DrawImage(img1, this.x, this.y);
