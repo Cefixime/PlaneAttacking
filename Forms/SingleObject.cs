@@ -9,8 +9,6 @@ namespace Plane
 {
     class SingleObject
     {
-        private SingleObject()
-        { }
         private static SingleObject _single = null;
         public static SingleObject GetSingle()
         {
@@ -29,7 +27,7 @@ namespace Plane
             set;
         }
         List<HeroBullet> heroBullets = new List<HeroBullet>();
-        List<PlaneEnemy> planeEnemies = new List<PlaneEnemy>();
+        public List<PlaneEnemy> planeEnemies = new List<PlaneEnemy>();
         public void AddGameObeject(PlaneObject go)
         {
             if (go is BackGround)
@@ -40,6 +38,17 @@ namespace Plane
                 heroBullets.Add(go as HeroBullet);
             else if (go is PlaneEnemy)
                 planeEnemies.Add(go as PlaneEnemy);
+        }
+        public void RemoveGameObject(PlaneObject go)
+        {
+            if(go is PlaneEnemy)
+            {
+                planeEnemies.Remove(go as PlaneEnemy);
+            }
+            if(go is HeroBullet)
+            {
+                heroBullets.Remove(go as HeroBullet);
+            }
         }
         public void Draw(Graphics g)
         {

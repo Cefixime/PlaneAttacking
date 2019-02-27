@@ -134,7 +134,26 @@ namespace Plane
             if (this.y <= 0)
                 this.y = 0;
             if (this.y >= 780)
+            {
                 this.y = 1400;
+                SingleObject.GetSingle().RemoveGameObject(this);
+            }
+            if(this.EnemyType == 0 && this.y >= 200)
+            {
+                if(this.x >= 0 && this.x <= 220)
+                {
+                    this.x += r.Next(0, 50);
+                }
+                else
+                {
+                    this.x -= r.Next(0, 50);
+                }
+            }
+            else
+            {
+                this.Speed += 1;
+            }
         }
+        static Random r = new Random();
     }
 }

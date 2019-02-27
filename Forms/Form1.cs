@@ -25,7 +25,9 @@ namespace Forms
             SingleObject.GetSingle().AddGameObeject(new PlaneHero(100, 100, 5, 3, Direction.up));
             for(int i = 0; i < 4; i++)
             {
-                SingleObject.GetSingle().AddGameObeject(new PlaneEnemy(r.Next(0, this.Width), -400, r.Next(0, 3)));
+                SingleObject.GetSingle().AddGameObeject(new PlaneEnemy(r.Next(0, this.Width), -400, r.Next(0, 2)));
+                if (r.Next(0, 100) > 90)
+                    SingleObject.GetSingle().AddGameObeject(new PlaneEnemy(r.Next(0, this.Width), -400, 2));
             }
         }
 
@@ -42,6 +44,9 @@ namespace Forms
         private void TimerBG_Tick(object sender, EventArgs e)
         {
             this.Invalidate();
+            int count = SingleObject.GetSingle().planeEnemies.Count;
+            if (count <= 1)
+                InitialPlaneEnemy();
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
@@ -53,5 +58,12 @@ namespace Forms
         {
             SingleObject.GetSingle().PH.Fire();
         }
+        private void InitialPlaneEnemy()
+        {
+            for(int i = 0; i< 4; i++)
+            {
+                SingleObject.GetSingle().AddGameObeject(new PlaneEnemy(r.Next(0, this.Width), -400, r.Next(0, 3)));
+            }
+}
     }
 }
