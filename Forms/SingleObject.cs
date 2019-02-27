@@ -59,5 +59,19 @@ namespace Plane
             for (int i = 0; i < planeEnemies.Count; i++)
                 planeEnemies[i].Draw(g);
         }
+        public void Collision()
+        {
+            for (int i = 0; i < heroBullets.Count; i++)
+            {
+                for(int j = 0; j < planeEnemies.Count; j++)
+                    if(heroBullets[i].GetRectangle().IntersectsWith(planeEnemies[j].GetRectangle()))
+                    {
+                        planeEnemies[j].Life -= heroBullets[i].Power;
+                        planeEnemies[j].IsOver();
+                        heroBullets.Remove(heroBullets[i]);
+                        break;
+                    }
+            }
+        }
     }
 }

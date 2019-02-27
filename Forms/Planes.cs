@@ -17,6 +17,7 @@ namespace Plane
         {
             this.imgPlane = img;
         }
+        public abstract void IsOver();
     }
     class PlaneHero : PlaneFather
     {
@@ -38,6 +39,10 @@ namespace Plane
         public void Fire()
         {
             SingleObject.GetSingle().AddGameObeject(new HeroBullet(this, 10, 1));
+        }
+        public override void IsOver()
+        {
+            throw new NotImplementedException();
         }
     }
     class PlaneEnemy : PlaneFather
@@ -155,5 +160,13 @@ namespace Plane
             }
         }
         static Random r = new Random();
+        public override void IsOver()
+        {
+            if (this.Life <= 0)
+            {
+                SingleObject.GetSingle().RemoveGameObject(this);
+
+            }
+        }
     }
 }

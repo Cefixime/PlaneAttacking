@@ -47,6 +47,7 @@ namespace Forms
             int count = SingleObject.GetSingle().planeEnemies.Count;
             if (count <= 1)
                 InitialPlaneEnemy();
+            SingleObject.GetSingle().Collision();
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
@@ -60,10 +61,12 @@ namespace Forms
         }
         private void InitialPlaneEnemy()
         {
-            for(int i = 0; i< 4; i++)
+            for (int i = 0; i < 4; i++)
             {
-                SingleObject.GetSingle().AddGameObeject(new PlaneEnemy(r.Next(0, this.Width), -400, r.Next(0, 3)));
+                SingleObject.GetSingle().AddGameObeject(new PlaneEnemy(r.Next(0, this.Width), -400, r.Next(0, 2)));
+                if (r.Next(0, 100) > 90)
+                    SingleObject.GetSingle().AddGameObeject(new PlaneEnemy(r.Next(0, this.Width), -400, 2));
             }
-}
+        }
     }
 }
