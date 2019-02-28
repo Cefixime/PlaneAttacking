@@ -28,7 +28,10 @@ namespace Plane
         }
         List<HeroBullet> heroBullets = new List<HeroBullet>();
         public List<PlaneEnemy> planeEnemies = new List<PlaneEnemy>();
-        public void AddGameObeject(PlaneObject go)
+        List<EnemyBoom> enemyBooms = new List<EnemyBoom>();
+        List<EnemyBullet> enemyBullets = new List<EnemyBullet>();
+        List<HeroBoom> heroBooms = new List<HeroBoom>();
+        public void AddGameObject(PlaneObject go)
         {
             if (go is BackGround)
                 this.BG = go as BackGround;
@@ -38,6 +41,12 @@ namespace Plane
                 heroBullets.Add(go as HeroBullet);
             else if (go is PlaneEnemy)
                 planeEnemies.Add(go as PlaneEnemy);
+            else if (go is EnemyBoom)
+                enemyBooms.Add(go as EnemyBoom);
+            else if (go is EnemyBullet)
+                enemyBullets.Add(go as EnemyBullet);
+            else if (go is HeroBoom)
+                heroBooms.Add(go as HeroBoom);
         }
         public void RemoveGameObject(PlaneObject go)
         {
@@ -45,9 +54,21 @@ namespace Plane
             {
                 planeEnemies.Remove(go as PlaneEnemy);
             }
-            if(go is HeroBullet)
+            else if(go is HeroBullet)
             {
                 heroBullets.Remove(go as HeroBullet);
+            }
+            else if(go is EnemyBoom)
+            {
+                enemyBooms.Remove(go as EnemyBoom);
+            }
+            else if (go is EnemyBullet)
+            {
+                enemyBullets.Remove(go as EnemyBullet);
+            }
+            else if (go is HeroBoom)
+            {
+                heroBooms.Remove(go as HeroBoom);
             }
         }
         public void Draw(Graphics g)
@@ -58,6 +79,14 @@ namespace Plane
                 heroBullets[i].Draw(g);
             for (int i = 0; i < planeEnemies.Count; i++)
                 planeEnemies[i].Draw(g);
+            for (int i = 0; i < enemyBooms.Count; i++)
+                enemyBooms[i].Draw(g);
+            for (int i = 0; i < enemyBullets.Count; i++)
+                enemyBullets[i].Draw(g);
+            for (int i = 0; i < heroBooms.Count; i++)
+            {
+                heroBooms[i].Draw(g);
+            }
         }
         public void Collision()
         {
@@ -71,6 +100,23 @@ namespace Plane
                         heroBullets.Remove(heroBullets[i]);
                         break;
                     }
+            }
+            for(int i = 0; i < enemyBullets.Count; i++)
+            {
+                if (enemyBullets[i].GetRectangle().IntersectsWith(this.PH.GetRectangle()))
+                {
+                    this.PH.IsOver();
+                }
+            }
+            for (int i = 0; i < planeEnemies.Count; i++)
+            {
+                if(planeEnemies[i].GetRectangle().IntersectsWith(this.PH.GetRectangle()))
+                {
+                    planeEnemies[i].Life = 0;
+                    planeEnemies[i].IsOver();
+                    this.PH.IsOver();
+                    break;
+                }
             }
         }
     }

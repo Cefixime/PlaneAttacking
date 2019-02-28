@@ -71,6 +71,11 @@ namespace Plane
         {
             return new Rectangle(this.x, this.y, this.Width, this.Height);
         }
+        public PlaneObject(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
         public virtual void Move()
         {
             switch (this.Dir)

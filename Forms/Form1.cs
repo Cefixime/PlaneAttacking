@@ -21,13 +21,13 @@ namespace Forms
         }
         public void InitialGame()
         {
-            SingleObject.GetSingle().AddGameObeject(new BackGround(0, -850, 5));
-            SingleObject.GetSingle().AddGameObeject(new PlaneHero(100, 100, 5, 3, Direction.up));
+            SingleObject.GetSingle().AddGameObject(new BackGround(0, -850, 5));
+            SingleObject.GetSingle().AddGameObject(new PlaneHero(100, 100, 5, 3, Direction.up));
             for(int i = 0; i < 4; i++)
             {
-                SingleObject.GetSingle().AddGameObeject(new PlaneEnemy(r.Next(0, this.Width), -400, r.Next(0, 2)));
+                SingleObject.GetSingle().AddGameObject(new PlaneEnemy(r.Next(0, this.Width), -400, r.Next(0, 2)));
                 if (r.Next(0, 100) > 90)
-                    SingleObject.GetSingle().AddGameObeject(new PlaneEnemy(r.Next(0, this.Width), -400, 2));
+                    SingleObject.GetSingle().AddGameObject(new PlaneEnemy(r.Next(0, this.Width), -400, 2));
             }
         }
 
@@ -63,9 +63,9 @@ namespace Forms
         {
             for (int i = 0; i < 4; i++)
             {
-                SingleObject.GetSingle().AddGameObeject(new PlaneEnemy(r.Next(0, this.Width), -400, r.Next(0, 2)));
+                SingleObject.GetSingle().AddGameObject(new PlaneEnemy(r.Next(0, this.Width), -400, r.Next(0, 2)));
                 if (r.Next(0, 100) > 90)
-                    SingleObject.GetSingle().AddGameObeject(new PlaneEnemy(r.Next(0, this.Width), -400, 2));
+                    SingleObject.GetSingle().AddGameObject(new PlaneEnemy(r.Next(0, this.Width), -400, 2));
             }
         }
     }

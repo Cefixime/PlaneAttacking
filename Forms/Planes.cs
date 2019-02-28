@@ -38,11 +38,11 @@ namespace Plane
         }
         public void Fire()
         {
-            SingleObject.GetSingle().AddGameObeject(new HeroBullet(this, 10, 1));
+            SingleObject.GetSingle().AddGameObject(new HeroBullet(this, 10, 1));
         }
         public override void IsOver()
         {
-            throw new NotImplementedException();
+            SingleObject.GetSingle().AddGameObject(new HeroBoom(this.x, this.y));
         }
     }
     class PlaneEnemy : PlaneFather
@@ -158,6 +158,15 @@ namespace Plane
             {
                 this.Speed += 1;
             }
+            if (r.Next(0, 100) > 90)
+            {
+                Fire();
+            }
+
+        }
+        public void Fire()
+        {
+            SingleObject.GetSingle().AddGameObject(new EnemyBullet(this, 20 , 1));
         }
         static Random r = new Random();
         public override void IsOver()
@@ -165,7 +174,7 @@ namespace Plane
             if (this.Life <= 0)
             {
                 SingleObject.GetSingle().RemoveGameObject(this);
-
+                SingleObject.GetSingle().AddGameObject(new EnemyBoom(this.x, this.y, this.EnemyType));
             }
         }
     }

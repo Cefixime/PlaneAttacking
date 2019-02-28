@@ -55,6 +55,12 @@ namespace Plane
 
         }
     }
-
+    class EnemyBullet : Bullet
+    {
+        private static Image imgHero = Resources.bullet11;
+        public EnemyBullet(PlaneFather pf, int speed, int power)
+            : base(pf, imgHero, speed, power)
+        { }
+    }
 
 }
