@@ -1,3 +1,9 @@
 # PlaneAttacking
-This is my first C# project.    
-It is a game about attacking the enemy.
+
+## Introduction
+
+	This is my first pratical C# project.	
+	It is a Mini game of hitting the planes.
+
+## Game picture
+
