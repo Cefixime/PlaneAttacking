@@ -175,6 +175,18 @@ namespace Plane
             {
                 SingleObject.GetSingle().RemoveGameObject(this);
                 SingleObject.GetSingle().AddGameObject(new EnemyBoom(this.x, this.y, this.EnemyType));
+                switch(this.EnemyType)
+                {
+                    case 0:
+                        SingleObject.GetSingle().Score += 10;
+                        break;
+                    case 1:
+                        SingleObject.GetSingle().Score += 20;
+                        break;
+                    case 2:
+                        SingleObject.GetSingle().Score += 30;
+                        break;
+                }
             }
         }
     }

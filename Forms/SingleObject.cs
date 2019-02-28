@@ -88,6 +88,11 @@ namespace Plane
                 heroBooms[i].Draw(g);
             }
         }
+        public int Score
+        {
+            get;
+            set;
+        }
         public void Collision()
         {
             for (int i = 0; i < heroBullets.Count; i++)

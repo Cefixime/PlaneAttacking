@@ -34,6 +34,8 @@ namespace Forms
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             SingleObject.GetSingle().Draw(e.Graphics);
+            string score = SingleObject.GetSingle().Score.ToString();
+            e.Graphics.DrawString(score, new Font("宋体", 20, FontStyle.Bold), Brushes.Red, new Point(0, 0));
         }
         private void Form1_Load(object sender, EventArgs e)
         {
