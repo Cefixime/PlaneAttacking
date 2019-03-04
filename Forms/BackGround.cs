@@ -21,7 +21,7 @@ namespace Plane
             this.y += this.Speed;
             if(this.y == 0)
             {
-                this.y = -850;
+                this.y = -840;
             }
             g.DrawImage(imaBG, this.x, this.y);
         }

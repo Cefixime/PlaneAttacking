@@ -100,17 +100,35 @@ namespace Plane
                 for(int j = 0; j < planeEnemies.Count; j++)
                     if(heroBullets[i].GetRectangle().IntersectsWith(planeEnemies[j].GetRectangle()))
                     {
-                        planeEnemies[j].Life -= heroBullets[i].Power;
-                        planeEnemies[j].IsOver();
-                        heroBullets.Remove(heroBullets[i]);
+                        if (planeEnemies[j].invulnerable == false)
+                        {
+                            planeEnemies[j].Life -= heroBullets[i].Power;
+                            planeEnemies[j].IsOver();
+                            heroBullets.Remove(heroBullets[i]);
+                            break;
+                        }
+                    }
+            }
+
+            for (int i = 0; i < heroBullets.Count; i++)
+            {
+                for (int j = 0; j < enemyBullets.Count; j++)
+                    if (heroBullets[i].GetRectangle().IntersectsWith(enemyBullets[j].GetRectangle()))
+                    {
+                        enemyBullets.Remove(enemyBullets[j]);
                         break;
                     }
             }
-            for(int i = 0; i < enemyBullets.Count; i++)
+
+            for (int i = 0; i < enemyBullets.Count; i++)
             {
+
                 if (enemyBullets[i].GetRectangle().IntersectsWith(this.PH.GetRectangle()))
                 {
-                    this.PH.IsOver();
+                    enemyBullets.Remove(enemyBullets[i]);
+                    this.PH.Life--;
+                    if(this.PH.Life <= 0)
+                        this.PH.IsOver();
                 }
             }
             for (int i = 0; i < planeEnemies.Count; i++)
