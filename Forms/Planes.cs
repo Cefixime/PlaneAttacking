@@ -11,8 +11,9 @@ namespace Plane
 {
     abstract class PlaneFather : PlaneObject
     {
+        public static Random r = new Random();
         private Image imgPlane;
-        public PlaneFather(int x, int y, Image img, int speed, int life, Direction dir) 
+        public PlaneFather(int x, int y, Image img, int speed, int life, Direction dir, bool invulnerable) 
             : base(x, y, img.Width, img.Height, speed, life, dir)
         {
             this.imgPlane = img;
@@ -23,7 +24,7 @@ namespace Plane
     {
         private static Image imgPlane = Resources.hero1;
         public PlaneHero(int x, int y, int speed, int life, Direction dir)
-            :base(x, y, imgPlane, speed, life, dir)
+            :base(x, y, imgPlane, speed, life, dir, false)
         {
         
         }
@@ -33,16 +34,25 @@ namespace Plane
         }
         public void MouseMove(MouseEventArgs e)
         {
-            this.x = e.X;
-            this.y = e.Y;
+            if (Forms.Form1.lost == false)
+            {
+                this.x = e.X - 23;
+                this.y = e.Y - 25;
+            }
         }
         public void Fire()
         {
-            SingleObject.GetSingle().AddGameObject(new HeroBullet(this, 10, 1));
+            if (Forms.Form1.shoottimer > 7)
+            {
+                SingleObject.GetSingle().AddGameObject(new HeroBullet(this, 10, 1));
+                Forms.Form1.shoottimer = 0;
+            }
         }
         public override void IsOver()
         {
             SingleObject.GetSingle().AddGameObject(new HeroBoom(this.x, this.y));
+            this.y = 1000;
+            Forms.Form1.lost = true;
         }
     }
     class PlaneEnemy : PlaneFather
@@ -50,8 +60,9 @@ namespace Plane
         private static Image img1 = Resources.enemy0;
         private static Image img2 = Resources.enemy1;
         private static Image img3 = Resources.enemy2;
-        public PlaneEnemy(int x, int y, int type)
-            : base(x, y, GetImage(type), GetSpeed(type), GetLife(type), Direction.down)
+
+        public PlaneEnemy(int x, int y, int type, bool invulnerable)
+            : base(x, y, GetImage(type), GetSpeed(type), GetLife(type), Direction.down, false)
         {
             this.EnemyType = type;
         }
@@ -60,6 +71,9 @@ namespace Plane
             get;
             set;
         }
+
+        public bool invulnerable = true;
+
         public static Image GetImage(int type)
         {
             switch(type)
@@ -93,9 +107,9 @@ namespace Plane
                 case 0:
                     return 5;
                 case 1:
-                    return 6;
+                    return 4;
                 case 2:
-                    return 7;
+                    return 3;
             }
             return 0;
         }
@@ -132,43 +146,30 @@ namespace Plane
                     this.x += this.Speed;
                     break;
             }
+            if (this.y <= 0)
+            {
+                invulnerable = true;
+            }
+            else invulnerable = false;
+
             if (this.x <= 0)
                 this.x = 0;
-            if (this.x > 400)
-                this.x = 400;
-            if (this.y <= 0)
-                this.y = 0;
+            if (this.x > 280)
+                this.x = 280;
             if (this.y >= 780)
             {
                 this.y = 1400;
                 SingleObject.GetSingle().RemoveGameObject(this);
             }
-            if(this.EnemyType == 0 && this.y >= 200)
-            {
-                if(this.x >= 0 && this.x <= 220)
-                {
-                    this.x += r.Next(0, 50);
-                }
-                else
-                {
-                    this.x -= r.Next(0, 50);
-                }
-            }
-            else
-            {
-                this.Speed += 1;
-            }
-            if (r.Next(0, 100) > 90)
+            if (r.Next(0, 100) > 95)
             {
                 Fire();
             }
-
         }
         public void Fire()
         {
-            SingleObject.GetSingle().AddGameObject(new EnemyBullet(this, 20 , 1));
+            SingleObject.GetSingle().AddGameObject(new EnemyBullet(this, 20 , 5));
         }
-        static Random r = new Random();
         public override void IsOver()
         {
             if (this.Life <= 0)
@@ -178,13 +179,13 @@ namespace Plane
                 switch(this.EnemyType)
                 {
                     case 0:
-                        SingleObject.GetSingle().Score += 10;
+                        if (Forms.Form1.lost == false) SingleObject.GetSingle().Score += 10;
                         break;
                     case 1:
-                        SingleObject.GetSingle().Score += 20;
+                        if (Forms.Form1.lost == false) SingleObject.GetSingle().Score += 20;
                         break;
                     case 2:
-                        SingleObject.GetSingle().Score += 30;
+                        if (Forms.Form1.lost == false) SingleObject.GetSingle().Score += 30;
                         break;
                 }
             }

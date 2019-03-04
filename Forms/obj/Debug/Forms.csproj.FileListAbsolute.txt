@@ -8,3 +8,41 @@ C:\Users\skideu\source\repos\PlaneAttacking\Forms\obj\Debug\Forms.csproj.Generat
 C:\Users\skideu\source\repos\PlaneAttacking\Forms\obj\Debug\Forms.csproj.CoreCompileInputs.cache
 C:\Users\skideu\source\repos\PlaneAttacking\Forms\obj\Debug\Forms.exe
 C:\Users\skideu\source\repos\PlaneAttacking\Forms\obj\Debug\Forms.pdb
+F:\Modding Lol\PlaneAttacking-master\Forms\bin\Debug\Forms.exe.config
+F:\Modding Lol\PlaneAttacking-master\Forms\bin\Debug\Forms.exe
+F:\Modding Lol\PlaneAttacking-master\Forms\bin\Debug\Forms.pdb
+F:\Modding Lol\PlaneAttacking-master\Forms\obj\Debug\Forms.csprojResolveAssemblyReference.cache
+F:\Modding Lol\PlaneAttacking-master\Forms\obj\Debug\Forms.Form1.resources
+F:\Modding Lol\PlaneAttacking-master\Forms\obj\Debug\Forms.Properties.Resources.resources
+F:\Modding Lol\PlaneAttacking-master\Forms\obj\Debug\Forms.csproj.GenerateResource.Cache
+F:\Modding Lol\PlaneAttacking-master\Forms\obj\Debug\Forms.exe
+F:\Modding Lol\PlaneAttacking-master\Forms\obj\Debug\Forms.pdb
+F:\Modding Lol\Fixed Game\Forms\bin\Debug\Forms.exe.config
+F:\Modding Lol\Fixed Game\Forms\bin\Debug\Forms.exe
+F:\Modding Lol\Fixed Game\Forms\bin\Debug\Forms.pdb
+F:\Modding Lol\Fixed Game\Forms\obj\Debug\Forms.csprojResolveAssemblyReference.cache
+F:\Modding Lol\Fixed Game\Forms\obj\Debug\Forms.Form1.resources
+F:\Modding Lol\Fixed Game\Forms\obj\Debug\Forms.Properties.Resources.resources
+F:\Modding Lol\Fixed Game\Forms\obj\Debug\Forms.csproj.GenerateResource.Cache
+F:\Modding Lol\Fixed Game\Forms\obj\Debug\Forms.exe
+F:\Modding Lol\Fixed Game\Forms\obj\Debug\Forms.pdb
+E:\Downloads\PlaneAttacking, DunceHammer Edition\Modified Game\Forms\bin\Debug\Forms.exe.config
+E:\Downloads\PlaneAttacking, DunceHammer Edition\Modified Game\Forms\bin\Debug\Forms.exe
+E:\Downloads\PlaneAttacking, DunceHammer Edition\Modified Game\Forms\bin\Debug\Forms.pdb
+E:\Downloads\PlaneAttacking, DunceHammer Edition\Modified Game\Forms\obj\Debug\Forms.csprojAssemblyReference.cache
+E:\Downloads\PlaneAttacking, DunceHammer Edition\Modified Game\Forms\obj\Debug\Forms.Form1.resources
+E:\Downloads\PlaneAttacking, DunceHammer Edition\Modified Game\Forms\obj\Debug\Forms.Properties.Resources.resources
+E:\Downloads\PlaneAttacking, DunceHammer Edition\Modified Game\Forms\obj\Debug\Forms.csproj.GenerateResource.cache
+E:\Downloads\PlaneAttacking, DunceHammer Edition\Modified Game\Forms\obj\Debug\Forms.csproj.CoreCompileInputs.cache
+E:\Downloads\PlaneAttacking, DunceHammer Edition\Modified Game\Forms\obj\Debug\Forms.exe
+E:\Downloads\PlaneAttacking, DunceHammer Edition\Modified Game\Forms\obj\Debug\Forms.pdb
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\bin\Debug\Forms.exe.config
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\bin\Debug\Forms.exe
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\bin\Debug\Forms.pdb
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\obj\Debug\Forms.csprojAssemblyReference.cache
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\obj\Debug\Forms.Form1.resources
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\obj\Debug\Forms.Properties.Resources.resources
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\obj\Debug\Forms.csproj.GenerateResource.cache
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\obj\Debug\Forms.csproj.CoreCompileInputs.cache
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\obj\Debug\Forms.exe
+E:\workPlace\VS2017code\CSharp\PlaneAttacking\Forms\obj\Debug\Forms.pdb
