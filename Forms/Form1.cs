@@ -42,7 +42,9 @@ namespace Forms
         {
             SingleObject.GetSingle().Draw(e.Graphics);
             string score = SingleObject.GetSingle().Score.ToString();
+            string life = SingleObject.GetSingle().PH.Life.ToString();
             e.Graphics.DrawString(score, new Font("宋体", 20, FontStyle.Bold), Brushes.Red, new Point(0, 0));
+            e.Graphics.DrawString(life, new Font("consolas", 20, FontStyle.Bold), Brushes.Red, new Point(0, 20));
         }
         private void Form1_Load(object sender, EventArgs e)
         {

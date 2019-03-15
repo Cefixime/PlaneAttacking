@@ -7,3 +7,11 @@
 
 ## Game picture
 
+![Picture 1](https://github.com/Cefixime/PlaneAttacking/blob/master/PictureShot/20190315221435.png "shot")
+
+## Operation
+
+- Press the direction key to move.
+- Fire automaticly.
+- Top left corner display the score and life.
+
