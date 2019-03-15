@@ -7,3 +7,4 @@
 
 ## Game picture
 
+	![Picture 1](PlaneAttacking/)

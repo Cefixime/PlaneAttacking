@@ -29,7 +29,7 @@ namespace Forms
         {
             Cursor.Hide();
             SingleObject.GetSingle().AddGameObject(new BackGround(0, -400, 4));
-            SingleObject.GetSingle().AddGameObject(new PlaneHero(200, 700, 5, 5, Direction.up));
+            SingleObject.GetSingle().AddGameObject(new PlaneHero(200, 700, 5, 10, Direction.up));
             for(int i = 0; i < 4; i++)
             {
                 SingleObject.GetSingle().AddGameObject(new PlaneEnemy(r.Next(0, 281), r.Next(-400, -100), r.Next(0, 2), false));
@@ -42,7 +42,9 @@ namespace Forms
         {
             SingleObject.GetSingle().Draw(e.Graphics);
             string score = SingleObject.GetSingle().Score.ToString();
+            string life = SingleObject.GetSingle().PH.Life.ToString();
             e.Graphics.DrawString(score, new Font("宋体", 20, FontStyle.Bold), Brushes.Red, new Point(0, 0));
+            e.Graphics.DrawString(life, new Font("consolas", 20, FontStyle.Bold), Brushes.Red, new Point(0, 20));
         }
         private void Form1_Load(object sender, EventArgs e)
         {

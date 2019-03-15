@@ -126,9 +126,10 @@ namespace Plane
                 if (enemyBullets[i].GetRectangle().IntersectsWith(this.PH.GetRectangle()))
                 {
                     enemyBullets.Remove(enemyBullets[i]);
-                    this.PH.Life--;
                     if(this.PH.Life <= 0)
                         this.PH.IsOver();
+                    else
+                        this.PH.Life--;
                 }
             }
             for (int i = 0; i < planeEnemies.Count; i++)

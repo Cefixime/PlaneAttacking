@@ -5,7 +5,12 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forms", "Forms\Forms.csproj", "{ECD1E488-49D1-4A8A-B562-53F6CC7475E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hitting", "Hitting\Hitting.csproj", "{D06318B5-1195-499A-9E11-AE70C2A06680}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E7FB71D9-3A44-4FA9-BD12-109FBA5FDE0D}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		PictureShot\TIM图片20190315221355.png = PictureShot\TIM图片20190315221355.png
+		PictureShot\TIM图片20190315221435.png = PictureShot\TIM图片20190315221435.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +22,6 @@ Global
 		{ECD1E488-49D1-4A8A-B562-53F6CC7475E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECD1E488-49D1-4A8A-B562-53F6CC7475E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECD1E488-49D1-4A8A-B562-53F6CC7475E0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D06318B5-1195-499A-9E11-AE70C2A06680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D06318B5-1195-499A-9E11-AE70C2A06680}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D06318B5-1195-499A-9E11-AE70C2A06680}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D06318B5-1195-499A-9E11-AE70C2A06680}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
