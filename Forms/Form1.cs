@@ -29,7 +29,7 @@ namespace Forms
         {
             Cursor.Hide();
             SingleObject.GetSingle().AddGameObject(new BackGround(0, -400, 4));
-            SingleObject.GetSingle().AddGameObject(new PlaneHero(100, 100, 5, 5, Direction.up));
+            SingleObject.GetSingle().AddGameObject(new PlaneHero(200, 700, 5, 5, Direction.up));
             for(int i = 0; i < 4; i++)
             {
                 SingleObject.GetSingle().AddGameObject(new PlaneEnemy(r.Next(0, 281), r.Next(-400, -100), r.Next(0, 2), false));
@@ -76,16 +76,7 @@ namespace Forms
                 overlabel.Visible = false;
                 pressspace.Visible = false;
             }
-
-        }
-
-        private void Form1_MouseMove(object sender, MouseEventArgs e)
-        {
-            SingleObject.GetSingle().PH.MouseMove(e);
-        }
-
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
-        {
+            SingleObject.GetSingle().PH.Move();
             SingleObject.GetSingle().PH.Fire();
         }
         private void InitialPlaneEnemy()
@@ -119,7 +110,44 @@ namespace Forms
                     lost = false;
                 }
             }
+        }
 
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    SingleObject.GetSingle().PH.Diry = Direction.up;
+                    break;
+                case Keys.Down:
+                    SingleObject.GetSingle().PH.Diry = Direction.down;
+                    break;
+                case Keys.Left:
+                    SingleObject.GetSingle().PH.Dirx = Direction.left;
+                    break;
+                case Keys.Right:
+                    SingleObject.GetSingle().PH.Dirx = Direction.right;
+                    break;
+                case Keys.ControlKey:
+                    break;
+            }
+        }
+
+        private void Form1_KeyPress(object sender, KeyEventArgs e)
+        {
+            switch(e.KeyCode)
+            {
+                case Keys.Up:
+                case Keys.Down:
+                    SingleObject.GetSingle().PH.Diry = Direction.stop;
+                    break;
+                case Keys.Left:
+                case Keys.Right:
+                    SingleObject.GetSingle().PH.Dirx = Direction.stop;
+                    break;
+                case Keys.ControlKey:
+                    break;
+            }
         }
     }
 }

@@ -22,6 +22,8 @@ namespace Plane
     }
     class PlaneHero : PlaneFather
     {
+        public Direction Dirx;
+        public Direction Diry;
         private static Image imgPlane = Resources.hero1;
         public PlaneHero(int x, int y, int speed, int life, Direction dir)
             :base(x, y, imgPlane, speed, life, dir, false)
@@ -53,6 +55,39 @@ namespace Plane
             SingleObject.GetSingle().AddGameObject(new HeroBoom(this.x, this.y));
             this.y = 1000;
             Forms.Form1.lost = true;
+        }
+        public override void Move()
+        {
+            switch(Diry)
+            {
+                case Direction.up:
+                    this.y -= this.Speed;
+                    break;
+                case Direction.down:
+                    this.y += this.Speed;
+                    break;
+                case Direction.stop:
+                    break;
+            }
+            switch(Dirx)
+            {
+                case Direction.left:
+                    this.x -= this.Speed;
+                    break;
+                case Direction.right:
+                    this.x += this.Speed;
+                    break;
+                case Direction.stop:
+                    break;
+            }
+            if (this.x >= 440)
+                this.x = 440;
+            else if (this.x <= 0)
+                this.x = 0;
+            if (this.y >= 600)
+                this.y = 600;
+            else if (this.y <= 0)
+                this.y = 0;
         }
     }
     class PlaneEnemy : PlaneFather
