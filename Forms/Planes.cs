@@ -168,7 +168,7 @@ namespace Plane
         }
         public void Fire()
         {
-            SingleObject.GetSingle().AddGameObject(new EnemyBullet(this, 20 , 5));
+            SingleObject.GetSingle().AddGameObject(new EnemyBullet(this, 20 , 1));
         }
         public override void IsOver()
         {
