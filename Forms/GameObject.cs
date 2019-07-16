@@ -9,6 +9,7 @@ namespace Plane
 {
     public enum Direction
     {
+        stop,
         up,
         down,
         left,
